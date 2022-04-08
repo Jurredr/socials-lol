@@ -1,12 +1,10 @@
-import { Head, BlitzLayout } from "blitz"
+import { Head, BlitzLayout } from 'blitz'
+import WebHead from '../components/WebHead'
 
-const Layout: BlitzLayout<{title?: string}> = ({ title, children }) => {
+const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
   return (
     <>
-      <Head>
-        <title>{title || "socials-lol"}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <WebHead />
 
       {children}
     </>

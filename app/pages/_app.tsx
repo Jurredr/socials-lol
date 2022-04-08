@@ -5,20 +5,22 @@ import {
   AuthenticationError,
   AuthorizationError,
   ErrorFallbackProps,
-  useQueryErrorResetBoundary,
-} from "blitz"
-import LoginForm from "app/auth/components/LoginForm"
+  useQueryErrorResetBoundary
+} from 'blitz'
+import LoginForm from 'app/auth/components/LoginForm'
 
-import "app/core/styles/index.scss"
+import 'app/core/styles/index.scss'
 
 export default function App({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
 
   return (
+    // @ts-ignore
     <ErrorBoundary
       FallbackComponent={RootErrorFallback}
       onReset={useQueryErrorResetBoundary().reset}
     >
+      {/* @ts-ignore */}
       {getLayout(<Component {...pageProps} />)}
     </ErrorBoundary>
   )

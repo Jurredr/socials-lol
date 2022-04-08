@@ -1,6 +1,7 @@
 import { BlitzPage, Link } from 'blitz'
 import { FiLogIn } from 'react-icons/fi'
 import { BsGithub } from 'react-icons/bs'
+import Layout from 'app/core/layouts/Layout'
 
 const Home: BlitzPage = () => {
   return (
@@ -118,5 +119,7 @@ const Home: BlitzPage = () => {
 }
 
 Home.suppressFirstRenderFlicker = true
+// @ts-ignore
+Home.getLayout = (page) => <Layout title="Home">{page}</Layout>
 
 export default Home
