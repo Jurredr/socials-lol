@@ -1,8 +1,13 @@
 // tailwind.config.js
 module.exports = {
-  content: ["{pages,app}/**/*.{js,ts,jsx,tsx}"],
+  content: ['{pages,app}/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        gtmaru: ['GT Maru'],
+        newkansas: ['New Kansas']
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 }
