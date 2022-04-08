@@ -2,8 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "fonts/fonts.gt-maru.scss";
-@import "fonts/fonts.new-kansas.scss";
+@import 'fonts/fonts.gt-maru.scss';
+@import 'fonts/fonts.new-kansas.scss';
+
+p {
+  @apply font-gtmaru;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @apply font-newkansas;
+}
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
