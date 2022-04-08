@@ -6,6 +6,10 @@ module.exports = {
       fontFamily: {
         gtmaru: ['GT Maru'],
         newkansas: ['New Kansas']
+      },
+      colors: {
+        socialorange: '#F8A55D',
+        socialpink: '#F1819E'
       }
     }
   },
