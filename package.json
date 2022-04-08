@@ -16,7 +16,10 @@
   },
   "prettier": {
     "semi": false,
-    "printWidth": 100
+    "printWidth": 100,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
