@@ -1,9 +1,8 @@
-import { BlitzPage, useRouterQuery, Link, useMutation, Routes } from "blitz"
-import Layout from "app/core/layouts/Layout"
-import { LabeledTextField } from "app/core/components/LabeledTextField"
-import { Form, FORM_ERROR } from "app/core/components/Form"
-import { ResetPassword } from "app/auth/validations"
-import resetPassword from "app/auth/mutations/resetPassword"
+import { BlitzPage, useRouterQuery, Link, useMutation, Routes } from 'blitz'
+import { LabeledTextField } from 'app/core/components/LabeledTextField'
+import { Form, FORM_ERROR } from 'app/core/components/Form'
+import { ResetPassword } from 'app/auth/validations'
+import resetPassword from 'app/auth/mutations/resetPassword'
 
 const ResetPasswordPage: BlitzPage = () => {
   const query = useRouterQuery()
@@ -24,18 +23,18 @@ const ResetPasswordPage: BlitzPage = () => {
         <Form
           submitText="Reset Password"
           schema={ResetPassword}
-          initialValues={{ password: "", passwordConfirmation: "", token: query.token as string }}
+          initialValues={{ password: '', passwordConfirmation: '', token: query.token as string }}
           onSubmit={async (values) => {
             try {
               await resetPasswordMutation(values)
             } catch (error: any) {
-              if (error.name === "ResetPasswordError") {
+              if (error.name === 'ResetPasswordError') {
                 return {
-                  [FORM_ERROR]: error.message,
+                  [FORM_ERROR]: error.message
                 }
               } else {
                 return {
-                  [FORM_ERROR]: "Sorry, we had an unexpected error. Please try again.",
+                  [FORM_ERROR]: 'Sorry, we had an unexpected error. Please try again.'
                 }
               }
             }
@@ -53,7 +52,6 @@ const ResetPasswordPage: BlitzPage = () => {
   )
 }
 
-ResetPasswordPage.redirectAuthenticatedTo = "/"
-ResetPasswordPage.getLayout = (page) => <Layout title="Reset Your Password">{page}</Layout>
+ResetPasswordPage.redirectAuthenticatedTo = '/'
 
 export default ResetPasswordPage
