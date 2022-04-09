@@ -34,7 +34,7 @@ const Home: BlitzPage = () => {
               </Link>
               <Link href="/" scroll={false} passHref>
                 <div className="relative cursor-pointer">
-                  <div className="flex active:top-[0.15rem] justify-center z-10 items-center relative bg-white rounded-2xl h-[3rem] w-[9rem] border-[0.2rem] border-black">
+                  <div className="flex hover:top-[0.08rem] active:top-[0.15rem] justify-center z-10 items-center relative bg-white rounded-2xl h-[3rem] w-[9rem] border-[0.2rem] border-black">
                     <p className="noselect text-lg">Sign up</p>
                   </div>
                   <div className="absolute h-[3rem] w-[9rem] rounded-2xl bg-black -bottom-1" />
@@ -94,7 +94,7 @@ const Home: BlitzPage = () => {
           </div>
           <div className="flex gap-5">
             <div className="relative cursor-pointer">
-              <div className="flex active:top-[0.15rem] justify-center z-10 items-center relative bg-white rounded-2xl h-[3.45rem] w-[3.6rem] border-[0.2rem] border-socialorange">
+              <div className="flex hover:top-[0.08rem] active:top-[0.15rem] justify-center z-10 items-center relative bg-white rounded-2xl h-[3.45rem] w-[3.6rem] border-[0.2rem] border-socialorange">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   className="h-7 w-7"
@@ -106,7 +106,7 @@ const Home: BlitzPage = () => {
               <div className="absolute h-[3.45rem] w-[3.6rem] rounded-2xl bg-socialorange -bottom-1" />
             </div>
             <div className="relative cursor-pointer">
-              <div className="flex active:top-[0.15rem] justify-center z-10 items-center relative bg-white rounded-2xl h-[3.45rem] w-[3.6rem] border-[0.2rem] border-socialpink">
+              <div className="flex hover:top-[0.08rem] active:top-[0.15rem] justify-center z-10 items-center relative bg-white rounded-2xl h-[3.45rem] w-[3.6rem] border-[0.2rem] border-socialpink">
                 <BsGithub className="h-7 w-7" />
               </div>
               <div className="absolute h-[3.45rem] w-[3.6rem] rounded-2xl bg-socialpink -bottom-1" />

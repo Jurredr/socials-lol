@@ -20,8 +20,12 @@ export default function App({ Component, pageProps }: AppProps) {
       FallbackComponent={RootErrorFallback}
       onReset={useQueryErrorResetBoundary().reset}
     >
-      {/* @ts-ignore */}
-      {getLayout(<Component {...pageProps} />)}
+      {getLayout(
+        <div className="overflow-hidden">
+          {/* @ts-ignore */}
+          <Component {...pageProps} />
+        </div>
+      )}
     </ErrorBoundary>
   )
 }
