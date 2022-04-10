@@ -25,36 +25,53 @@ const Home: BlitzPage = () => {
                 alt="Logo icon of smiling face"
               />
             </div>
-            <div className="flex justify-center items-center gap-6 font-medium tracking-tight">
+            <div className="flex justify-center items-center gap-6">
               <Link href="/" scroll={false} passHref>
-                <div className="flex justify-center items-center gap-2 transition-all hover:gap-[0.35rem] hover:ml-[0.15rem] cursor-pointer whitespace-nowrap">
+                <button
+                  className="flex justify-center items-center gap-2 font-medium tracking-tight transition-all hover:gap-[0.35rem] hover:ml-[0.15rem] cursor-pointer whitespace-nowrap"
+                  type="button"
+                >
                   <FiLogIn strokeWidth={3} />
                   <p className="noselect text-lg">Sign in</p>
-                </div>
+                </button>
               </Link>
               <Link href="/" scroll={false} passHref>
-                <div className="relative cursor-pointer">
+                <button
+                  className="relative cursor-pointer font-medium tracking-tight whitespace-nowrap"
+                  type="button"
+                >
                   <div className="flex hover:top-[-0.08rem] active:top-[0.15rem] justify-center z-10 items-center relative bg-white rounded-2xl h-[3rem] w-[9rem] border-[0.2rem] border-black">
                     <p className="noselect text-lg">Sign up</p>
                   </div>
                   <div className="absolute h-[3rem] w-[9rem] rounded-2xl bg-black -bottom-1" />
-                </div>
+                </button>
               </Link>
             </div>
           </div>
           <div className="flex justify-between">
             <div className="flex flex-col gap-12">
-              <div className="font-semibold text-white text-[5rem]">
-                <h1 className="leading-tight mt-40">
+              <div className="mt-40 text-white text-[5rem]">
+                <h1 className="font-semibold leading-tight whitespace-nowrap">
                   One Card,<br></br>All your Socials.
                 </h1>
               </div>
-              <div className="relative cursor-text">
-                <div className="flex justify-between pl-7 pr-2 z-10 items-center relative bg-white rounded-full h-[4rem] w-full border-[0.2rem] border-black">
-                  <p className="noselect text-[1.8rem] tracking-tight font-medium">
-                    socials.lol/@<span className="text-gray-400 opacity-80">yourname</span>
-                  </p>
-                  <button className="noselect tracking-tight text-[1.4rem] font-medium rounded-full bg-gray-100 px-4 py-[0.3rem]">
+              <div className="relative">
+                <div className="flex w-full max-w-full pl-7 pr-2 z-10 items-center relative bg-white rounded-full h-[4rem] border-[0.2rem] border-black">
+                  <div className="flex items-center h-full">
+                    <span className="noselect text-[1.8rem] tracking-tight font-medium">
+                      socials.lol/@
+                    </span>
+                    <div className="flex-1 pr-1">
+                      <input
+                        className="outline-none max-w-[17rem] text-[1.8rem] text-gray-400 opacity-80 tracking-tight font-medium h-full"
+                        placeholder="yourname"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    className="noselect whitespace-nowrap w-full tracking-tight text-[1.4rem] font-medium rounded-full bg-gray-100 px-4 py-[0.3rem]"
+                    type="button"
+                  >
                     Sign up
                   </button>
                 </div>
@@ -93,22 +110,36 @@ const Home: BlitzPage = () => {
             <p className="cursor-pointer noselect">privacy policy</p>
           </div>
           <div className="flex gap-5">
-            <div className="relative cursor-pointer">
-              <div className="flex hover:top-[-0.08rem] active:top-[0.15rem] justify-center z-10 items-center relative bg-white rounded-2xl h-[3.45rem] w-[3.6rem] border-[0.2rem] border-socialorange">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  className="h-7 w-7"
-                  draggable={false}
-                  src="/jurre.svg"
-                  alt="Jurre.me personal portfolio icon"
-                />
-              </div>
+            <div className="relative ">
+              <a
+                className="cursor-pointer"
+                href="https://jurre.me"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <div className="flex hover:top-[-0.08rem] active:top-[0.15rem] justify-center z-10 items-center relative bg-white rounded-2xl h-[3.45rem] w-[3.6rem] border-[0.2rem] border-socialorange">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    className="h-7 w-7"
+                    draggable={false}
+                    src="/jurre.svg"
+                    alt="Jurre.me personal portfolio icon"
+                  />
+                </div>
+              </a>
               <div className="absolute h-[3.45rem] w-[3.6rem] rounded-2xl bg-socialorange -bottom-1" />
             </div>
-            <div className="relative cursor-pointer">
-              <div className="flex hover:top-[-0.08rem] active:top-[0.15rem] justify-center z-10 items-center relative bg-white rounded-2xl h-[3.45rem] w-[3.6rem] border-[0.2rem] border-socialpink">
-                <BsGithub className="h-7 w-7" />
-              </div>
+            <div className="relative">
+              <a
+                className="cursor-pointer"
+                href="https://github.com/jurredr"
+                rel="noreferrer"
+                target="_blank"
+              >
+                <div className="flex hover:top-[-0.08rem] active:top-[0.15rem] justify-center z-10 items-center relative bg-white rounded-2xl h-[3.45rem] w-[3.6rem] border-[0.2rem] border-socialpink">
+                  <BsGithub className="h-7 w-7" />
+                </div>
+              </a>
               <div className="absolute h-[3.45rem] w-[3.6rem] rounded-2xl bg-socialpink -bottom-1" />
             </div>
           </div>
