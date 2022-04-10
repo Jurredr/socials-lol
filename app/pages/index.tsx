@@ -63,7 +63,7 @@ const Home: BlitzPage = () => {
                     </span>
                     <div className="flex-1 pr-1">
                       <input
-                        className="outline-none max-w-[17rem] text-[1.8rem] text-gray-400 opacity-80 tracking-tight font-medium h-full"
+                        className="outline-none lowercase max-w-[17rem] text-[1.8rem] text-gray-400 opacity-80 tracking-tight font-medium h-full"
                         placeholder="yourname"
                       />
                     </div>
