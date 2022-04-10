@@ -5,11 +5,10 @@
 @import 'fonts/fonts.gt-maru.scss';
 @import 'fonts/fonts.new-kansas.scss';
 
-p {
-  @apply font-gtmaru;
-}
-
-button {
+p,
+span,
+button,
+input {
   @apply font-gtmaru;
 }
 
