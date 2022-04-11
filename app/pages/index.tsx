@@ -22,7 +22,7 @@ const Home: BlitzPage = () => {
               <img
                 className="h-8"
                 draggable={false}
-                src="/icon.svg"
+                src="/branding/icon.svg"
                 alt="Logo icon of smiling face"
               />
             </div>
@@ -76,7 +76,7 @@ const Home: BlitzPage = () => {
             <img
               className="h-[30rem] pr-20 mt-32"
               draggable={false}
-              src="/landing-hero-phone.png"
+              src="/images/landing-hero-phone.png"
               alt="Landing hero phone display"
             />
           </div>
@@ -85,12 +85,12 @@ const Home: BlitzPage = () => {
         <img
           className="h-[17rem] absolute -bottom-[5.5rem] left-[20rem]"
           draggable={false}
-          src="/arrow-bubble.svg"
+          src="/figures/arrow-bubble.svg"
           alt="Arrow pointing downwards"
         />
       </div>
-      <div className="h-screen flex justify-center pt-40">
-        <h1 className="font-semibold text-[5rem]">Share everything.</h1>
+      <div className="flex flex-col items-center mt-40 mb-96">
+        <h1 className="font-semibold text-[5rem] mb-4">Share everything.</h1>
       </div>
       <Footer />
     </div>

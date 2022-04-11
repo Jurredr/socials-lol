@@ -7,7 +7,12 @@ const Footer: React.FC = () => {
       <div className="flex justify-center items-center gap-3 cursor-pointer noselect">
         <p className="font-newkansas font-semibold text-white text-[2.7rem]">socials.lol</p>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className="h-8" draggable={false} src="/icon.svg" alt="Logo icon of smiling face" />
+        <img
+          className="h-8"
+          draggable={false}
+          src="/branding/icon.svg"
+          alt="Logo icon of smiling face"
+        />
       </div>
       <div className="flex gap-10 justify-center items-center">
         <div className="flex text-white font-medium gap-6">
@@ -27,7 +32,7 @@ const Footer: React.FC = () => {
             <img
               className="h-7 w-7"
               draggable={false}
-              src="/jurre.svg"
+              src="/icons/jurre.svg"
               alt="Jurre.me personal portfolio icon"
             />
           </ShadowButton>
