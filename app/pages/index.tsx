@@ -2,6 +2,7 @@ import { BlitzPage, Link } from 'blitz'
 import { FiLogIn } from 'react-icons/fi'
 import Layout from 'app/core/layouts/Layout'
 import Footer from 'app/core/components/Footer'
+import ShadowButton from 'app/core/components/ShadowButton'
 
 const Home: BlitzPage = () => {
   return (
@@ -35,17 +36,9 @@ const Home: BlitzPage = () => {
                   <p className="noselect text-lg">Sign in</p>
                 </button>
               </Link>
-              <Link href="/" scroll={false} passHref>
-                <button
-                  className="relative cursor-pointer font-medium tracking-tight whitespace-nowrap"
-                  type="button"
-                >
-                  <div className="flex hover:top-[-0.08rem] active:top-[0.15rem] justify-center z-10 items-center relative bg-white rounded-2xl h-[3rem] w-[9rem] border-[0.2rem] border-black">
-                    <p className="noselect text-lg">Sign up</p>
-                  </div>
-                  <div className="absolute h-[3rem] w-[9rem] rounded-2xl bg-black -bottom-1" />
-                </button>
-              </Link>
+              <ShadowButton h="[3rem]" w="[9rem]" bg="white" border="black" href="/">
+                <p className="noselect text-lg">Sign up</p>
+              </ShadowButton>
             </div>
           </div>
           <div className="flex justify-between">
