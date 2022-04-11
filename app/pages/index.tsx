@@ -14,12 +14,12 @@ const Home: BlitzPage = () => {
             'linear-gradient(120deg, rgba(255,172,213,1) 0%, rgba(254,250,166,1) 65%, rgba(255,253,210,1) 100%)'
         }}
       >
-        <div className="pt-16 px-44">
+        <div className="pt-16 px-8 sm:px-12 md:px-24 xl:px-44">
           <LandingNav />
           <div className="flex justify-between">
             <div className="flex flex-col gap-12">
-              <div className="mt-40 text-white text-[5rem]">
-                <h1 className="font-semibold leading-tight whitespace-nowrap">
+              <div className="mt-40">
+                <h1 className="font-semibold text-white text-[3.5rem] sm:text-[4rem] md:text-[5rem] leading-tight whitespace-nowrap">
                   One Card,<br></br>All your Socials.
                 </h1>
               </div>

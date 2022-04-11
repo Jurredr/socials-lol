@@ -6,10 +6,12 @@ const LandingNav: React.FC = () => {
   return (
     <div className="flex justify-between">
       <div className="flex justify-center items-center gap-3 cursor-pointer noselect">
-        <p className="font-newkansas font-semibold text-white text-[2.7rem]">socials.lol</p>
+        <p className="font-newkansas font-semibold text-white text-[1.7rem] sm:text-[2.7rem]">
+          socials.lol
+        </p>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          className="h-8"
+          className="h-5 sm:h-8"
           draggable={false}
           src="/branding/icon.svg"
           alt="Logo icon of smiling face"
@@ -22,7 +24,7 @@ const LandingNav: React.FC = () => {
             type="button"
           >
             <FiLogIn strokeWidth={3} />
-            <p className="noselect text-lg">Sign in</p>
+            <p className="noselect text-base sm:text-lg">Sign in</p>
           </button>
         </Link>
         <ShadowButton
@@ -33,7 +35,7 @@ const LandingNav: React.FC = () => {
           shadow="bg-black"
           href="/"
         >
-          <p className="noselect text-lg">Sign up</p>
+          <p className="noselect text-base sm:text-lg">Sign up</p>
         </ShadowButton>
       </div>
     </div>
