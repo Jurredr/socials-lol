@@ -21,10 +21,11 @@ const Footer: React.FC = () => {
         </div>
         <div className="flex gap-5">
           <ShadowButton
-            h="[3.45rem]"
-            w="[3.6rem]"
-            bg="white"
-            border="socialorange"
+            h="3.45rem"
+            w="3.6rem"
+            bg="bg-white"
+            border="border-socialorange"
+            shadow="bg-socialorange"
             href="https://jurre.me"
             external
           >
@@ -37,10 +38,11 @@ const Footer: React.FC = () => {
             />
           </ShadowButton>
           <ShadowButton
-            h="[3.45rem]"
-            w="[3.6rem]"
-            bg="white"
-            border="socialpink"
+            h="3.45rem"
+            w="3.6rem"
+            bg="bg-white"
+            border="border-socialpink"
+            shadow="bg-socialpink"
             href="https://github.com/jurredr"
             external
           >

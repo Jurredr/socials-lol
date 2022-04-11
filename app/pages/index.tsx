@@ -36,7 +36,14 @@ const Home: BlitzPage = () => {
                   <p className="noselect text-lg">Sign in</p>
                 </button>
               </Link>
-              <ShadowButton h="[3rem]" w="[9rem]" bg="white" border="black" href="/">
+              <ShadowButton
+                h="3rem"
+                w="9rem"
+                bg="bg-white"
+                border="border-black"
+                shadow="bg-black"
+                href="/"
+              >
                 <p className="noselect text-lg">Sign up</p>
               </ShadowButton>
             </div>
@@ -111,7 +118,14 @@ const Home: BlitzPage = () => {
           src="/images/landing-showcase.png"
           alt="Showcase of card with different social links"
         />
-        <ShadowButton h="[3rem]" w="[14rem]" bg="white" border="socialpink" href="/">
+        <ShadowButton
+          h="3rem"
+          w="14rem"
+          bg="bg-white"
+          border="border-socialpink"
+          shadow="bg-socialpink"
+          href="/"
+        >
           <p className="noselect text-lg">Create your Card</p>
         </ShadowButton>
       </div>
