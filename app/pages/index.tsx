@@ -89,8 +89,31 @@ const Home: BlitzPage = () => {
           alt="Arrow pointing downwards"
         />
       </div>
-      <div className="flex flex-col items-center mt-40 mb-96">
-        <h1 className="font-semibold text-[5rem] mb-4">Share everything.</h1>
+      <div className="flex flex-col items-center mt-40 mb-32">
+        <h1 className="font-semibold whitespace-nowrap relative text-[5rem] mb-4">
+          Share everything.
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className="h-[3.1rem] absolute -top-4 -right-16"
+            draggable={false}
+            src="/figures/star.svg"
+            alt="Drawn star figure"
+          />
+        </h1>
+        <p className="font-medium whitespace-nowrap text-[1.7rem] text-center">
+          With socials.lol you can create a shareable card with all<br></br>your socials, links,
+          game stats, and more!
+        </p>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          className="w-[70rem] mt-20 mb-10"
+          draggable={false}
+          src="/images/landing-showcase.png"
+          alt="Showcase of card with different social links"
+        />
+        <ShadowButton h="[3rem]" w="[14rem]" bg="white" border="socialpink" href="/">
+          <p className="noselect text-lg">Create your Card</p>
+        </ShadowButton>
       </div>
       <Footer />
     </div>

@@ -12,7 +12,12 @@ interface Props {
 const ShadowButton: React.FC<Props> = (props) => {
   return (
     <button
-      className="relative cursor-default font-medium tracking-tight whitespace-nowrap"
+      className={
+        'relative cursor-default font-medium tracking-tight whitespace-nowrap ' +
+        ('h-' + props.h) +
+        ' ' +
+        ('w-' + props.w)
+      }
       type="button"
     >
       {!props.external && (
