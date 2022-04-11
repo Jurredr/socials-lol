@@ -70,7 +70,7 @@ const Home: BlitzPage = () => {
                     </div>
                   </div>
                   <button
-                    className="noselect whitespace-nowrap w-full tracking-tight text-[1.4rem] font-medium rounded-full bg-gray-100 px-4 py-[0.3rem]"
+                    className="noselect whitespace-nowrap w-full tracking-tight text-[1.4rem] font-medium rounded-full bg-gray-400 bg-opacity-20 px-4 py-[0.3rem]"
                     type="button"
                   >
                     Sign up
