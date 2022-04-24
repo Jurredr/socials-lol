@@ -9,7 +9,7 @@ const Custom404 = () => {
     <div>
       <div className="w-screen h-screen">
         <div
-          className="px-44 py-3"
+          className="px-6 sm:px-10 xl:px-44 py-3"
           style={{
             background:
               'linear-gradient(120deg, rgba(255,172,213,1) 0%, rgba(254,250,166,1) 65%, rgba(255,253,210,1) 100%)'
@@ -19,8 +19,10 @@ const Custom404 = () => {
         </div>
         <div className="flex flex-col justify-center items-center gap-12 h-5/6">
           <div className="relative flex flex-col justify-center items-center">
-            <h1 className="text-[5.8rem] h-[7.6rem] font-semibold">404</h1>
-            <h2 className="text-[3rem] font-medium whitespace-nowrap">
+            <h1 className="text-[5rem] h-[6.5rem] sm:text-[5.8rem] sm:h-[7.6rem] font-semibold">
+              404
+            </h1>
+            <h2 className="text-[2rem] sm:text-[3rem] font-medium whitespace-nowrap">
               Well, that&apos;s awkward...
             </h2>
             {/* eslint-disable-next-line @next/next/no-img-element */}
