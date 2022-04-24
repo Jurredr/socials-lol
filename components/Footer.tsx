@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
             bg="bg-white"
             border="border-socialpink"
             shadow="bg-socialpink"
-            href="https://github.com/jurredr"
+            href="https://github.com/Jurredr/socials-lol"
             external
           >
             <BsGithub className="h-7 w-7" />
