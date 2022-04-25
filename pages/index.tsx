@@ -2,8 +2,12 @@ import Footer from '../components/Footer'
 import ShadowButton from '../components/ShadowButton'
 import NavBar from '../components/NavBar'
 import { NextPage } from 'next'
+import Link from 'next/link'
+import { ChangeEvent, useState } from 'react'
 
 const Home: NextPage = () => {
+  const [signupInput, setSignupInput] = useState('')
+
   return (
     <div>
       <div
@@ -33,15 +37,20 @@ const Home: NextPage = () => {
                         className="outline-none lowercase max-w-[17rem] text-[1.8rem] placeholder-gray-400 placeholder:opacity-80 tracking-tight font-medium h-full"
                         placeholder="yourname"
                         spellCheck={false}
+                        onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                          setSignupInput(event.target.value)
+                        }
                       />
                     </div>
                   </div>
-                  <button
-                    className="noselect whitespace-nowrap w-full tracking-tight text-[1.4rem] font-medium rounded-full bg-gray-400 bg-opacity-20 px-4 py-[0.3rem]"
-                    type="button"
-                  >
-                    Sign up
-                  </button>
+                  <Link href={`/sign-up?username=${signupInput}`} passHref>
+                    <button
+                      className="noselect whitespace-nowrap w-full tracking-tight text-[1.4rem] font-medium rounded-full bg-gray-400 bg-opacity-20 px-4 py-[0.3rem]"
+                      type="button"
+                    >
+                      Sign up
+                    </button>
+                  </Link>
                 </div>
                 <div className="absolute h-[4rem] w-full rounded-full bg-black -bottom-2" />
               </div>
