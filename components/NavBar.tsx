@@ -20,7 +20,7 @@ const NavBar: React.FC = () => {
         </div>
       </Link>
       <div className="flex justify-center items-center gap-6">
-        <Link href="/" passHref>
+        <Link href="/sign-in" passHref>
           <button
             className="flex justify-center items-center gap-2 font-medium tracking-tight transition-all hover:gap-[0.35rem] hover:ml-[0.15rem] cursor-pointer whitespace-nowrap"
             type="button"

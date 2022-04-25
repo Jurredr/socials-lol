@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 
-const SignUp: NextPage = () => {
+const SignIn: NextPage = () => {
   return (
     <div className="w-full h-full grid grid-cols-2 items-center justify-center">
       {/* Left */}
@@ -18,4 +18,4 @@ const SignUp: NextPage = () => {
   )
 }
 
-export default SignUp
+export default SignIn
