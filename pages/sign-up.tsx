@@ -1,5 +1,8 @@
 import { NextPage } from 'next'
+import Link from 'next/link'
 import { IoChevronBack } from 'react-icons/io5'
+import OAuthButtons from '../components/auth/OAuthButtons'
+import DividerText from '../components/DividerText'
 import ShadowButton from '../components/ShadowButton'
 
 const SignUp: NextPage = () => {
@@ -26,10 +29,23 @@ const SignUp: NextPage = () => {
 
         {/* Register */}
         <div className="flex flex-col justify-center items-center w-full max-w-[22rem]">
-          <h1>Create Account</h1>
-          <p>
-            Aleady have an account? <span>Sign in</span>
+          <h1 className="text-[3.3rem] font-semibold whitespace-nowrap">
+            Create Account
+          </h1>
+          <p className="font-medium">
+            Aleady have an account?{' '}
+            <Link href="/sign-in" passHref>
+              <span className="text-socialpink cursor-pointer">Sign in</span>
+            </Link>
           </p>
+
+          <div>
+            {/* OAuth */}
+            <OAuthButtons textPrefix="Sign up with " />
+
+            {/* Or */}
+            <DividerText text="or" />
+          </div>
         </div>
       </div>
 
