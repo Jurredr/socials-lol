@@ -33,13 +33,15 @@ const SignUp: NextPage = () => {
             Create Account
           </h1>
           <p className="font-medium">
-            Aleady have an account?{' '}
+            Already have an account?{' '}
             <Link href="/sign-in" passHref>
-              <span className="text-socialpink cursor-pointer">Sign in</span>
+              <span className="text-socialpink cursor-pointer hover:underline">
+                Sign in
+              </span>
             </Link>
           </p>
 
-          <div>
+          <div className="w-full flex flex-col gap-4 mt-6">
             {/* OAuth */}
             <OAuthButtons textPrefix="Sign up with " />
 

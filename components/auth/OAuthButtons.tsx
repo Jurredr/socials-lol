@@ -29,8 +29,14 @@ const OAuthButtons: React.FC<Props> = (props) => {
   return (
     <>
       {authLoading ? (
-        <button className="w-full bg-gradient-to-r from-blue-600 to-blue-400">
-          Loading
+        <button
+          className="w-full rounded-xl px-2 py-[0.65rem] text-white font-medium"
+          style={{
+            background:
+              'linear-gradient(120deg, rgba(255,172,213,1) 0%, rgba(254,250,166,1) 95%, rgba(255,253,210,1) 100%)'
+          }}
+        >
+          Loading...
         </button>
       ) : (
         // @ts-ignore
@@ -38,7 +44,11 @@ const OAuthButtons: React.FC<Props> = (props) => {
           if (provider.name === 'Email') return
           return (
             <button
-              className="w-full bg-gradient-to-r from-blue-600 to-blue-400"
+              className="w-full rounded-xl px-2 py-[0.65rem] text-white font-medium"
+              style={{
+                background:
+                  'linear-gradient(120deg, rgba(255,172,213,1) 0%, rgba(254,250,166,1) 95%, rgba(255,253,210,1) 100%)'
+              }}
               key={provider.name}
               onClick={() => signIn(provider.id, { callbackUrl: '/' })}
             >
