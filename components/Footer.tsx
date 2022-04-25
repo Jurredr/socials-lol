@@ -4,7 +4,7 @@ import ShadowButton from './ShadowButton'
 
 const Footer: React.FC = () => {
   return (
-    <div className="bg-black w-screen h-[9rem] sm:h-[7rem] flex px-6 sm:px-10 xl:px-44 justify-between items-start pt-4 sm:pt-0 sm:items-center -z-20">
+    <div className="bg-black w-screen h-[9rem] sm:h-[7rem] flex px-6 sm:px-10 xl:px-44 justify-between items-start pt-4 sm:pt-0 sm:items-center">
       <Link href="/" passHref>
         <div className="flex justify-center items-center gap-3 cursor-pointer noselect">
           <p className="font-newkansas font-semibold text-white text-[2rem] sm:text-[2.7rem]">
@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           </p>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            className="h-6 sm:h-8"
+            className="h-6 sm:h-8 noselect"
             draggable={false}
             src="/branding/icon.svg"
             alt="Logo icon of smiling face"
@@ -21,12 +21,16 @@ const Footer: React.FC = () => {
       </Link>
       <div className="flex flex-col sm:flex-row sm:gap-2 md:gap-4 lg:gap-10 justify-center items-center">
         <div className="absolute left-[1.5rem] bottom-8 sm:bottom-auto sm:left-auto sm:relative flex text-white font-medium gap-2 lg:gap-6">
-          <p className="cursor-pointer noselect sm:w-20 md:w-auto">
-            terms of service
-          </p>
-          <p className="cursor-pointer noselect sm:w-20 md:w-auto">
-            privacy policy
-          </p>
+          <Link href="/tos" passHref>
+            <p className="cursor-pointer noselect sm:w-20 md:w-auto">
+              terms of service
+            </p>
+          </Link>
+          <Link href="/privacy-statement" passHref>
+            <p className="cursor-pointer noselect sm:w-20 md:w-auto">
+              privacy policy
+            </p>
+          </Link>
         </div>
         <div className="flex gap-5">
           <ShadowButton
