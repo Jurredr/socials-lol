@@ -24,13 +24,6 @@ interface Props {
 }
 
 const SignUp: NextPage<Props> = (props) => {
-  const router = useRouter()
-  useEffect(() => {
-    if (props.session?.user) {
-      router.push('/')
-    }
-  })
-
   return (
     <div className="w-full h-full grid grid-cols-2 items-center justify-center">
       {/* Left */}
@@ -95,6 +88,7 @@ export default SignUp
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getSession(context)
+  if (session) return { redirect: { destination: '/', permanent: false } }
   const authProviders = await getProviders()
   return {
     props: {
