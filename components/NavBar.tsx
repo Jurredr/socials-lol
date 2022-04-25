@@ -1,23 +1,22 @@
-import { Session } from 'next-auth'
-import { useSession } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
-import { useEffect } from 'react'
-import { FiLogIn } from 'react-icons/fi'
+import { FiLogIn, FiUser } from 'react-icons/fi'
 import ShadowButton from './ShadowButton'
 
 interface Props {
   ssr?: boolean
-  ssrData?: Session | null
+  ssrData?:
+    | {
+        name?: string | null | undefined
+        email?: string | null | undefined
+        image?: string | null | undefined
+      }
+    | undefined
 }
 
 const NavBar: React.FC<Props> = (props) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const data = props.ssr ? props.ssrData : useSession().data
-  const sesh = useSession()
-
-  useEffect(() => {
-    console.log(data, sesh)
-  }, [data, sesh])
+  const user = props.ssr ? props.ssrData : useSession().data?.user
 
   return (
     <div className="flex justify-between">
@@ -35,9 +34,13 @@ const NavBar: React.FC<Props> = (props) => {
           />
         </div>
       </Link>
-      {data ? (
-        <div className="flex justify-center items-center">
-          {data.user?.name}
+      {user ? (
+        <div
+          className="flex justify-center items-center cursor-pointer font-medium"
+          onClick={() => signOut()}
+        >
+          <FiUser className="mr-2" />
+          {user.name}
         </div>
       ) : (
         <div className="flex justify-center items-center gap-6">

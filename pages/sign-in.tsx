@@ -1,5 +1,4 @@
 import { GetServerSidePropsContext, NextPage } from 'next'
-import { Session } from 'next-auth'
 import { BuiltInProviderType } from 'next-auth/providers'
 import {
   ClientSafeProvider,
@@ -8,15 +7,12 @@ import {
   LiteralUnion
 } from 'next-auth/react'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
 import { IoChevronBack } from 'react-icons/io5'
 import OAuthButtons from '../components/auth/OAuthButtons'
 import DividerText from '../components/DividerText'
 import ShadowButton from '../components/ShadowButton'
 
 interface Props {
-  session: Session | null
   authProviders: Record<
     LiteralUnion<BuiltInProviderType, string>,
     ClientSafeProvider
@@ -92,7 +88,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   const authProviders = await getProviders()
   return {
     props: {
-      session,
       authProviders
     }
   }

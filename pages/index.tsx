@@ -8,10 +8,15 @@ import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import { basicHoverTapScale } from '../src/motionpresets'
 import { getSession } from 'next-auth/react'
-import { Session } from 'next-auth'
 
 interface Props {
-  session: Session | null
+  user:
+    | {
+        name?: string | null | undefined
+        email?: string | null | undefined
+        image?: string | null | undefined
+      }
+    | undefined
 }
 
 const Home: NextPage<Props> = (props) => {
@@ -28,7 +33,7 @@ const Home: NextPage<Props> = (props) => {
         }}
       >
         <div className="pt-16 px-8 sm:px-12 md:px-24 xl:px-44">
-          <NavBar ssr ssrData={props.session} />
+          <NavBar ssr ssrData={props.user} />
           <div className="flex justify-between">
             <div className="flex flex-col gap-12">
               <div className="mt-40">
@@ -142,9 +147,17 @@ export default Home
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getSession(context)
+  if (!session) {
+    return {
+      props: {
+        user: null
+      }
+    }
+  }
+  const { user } = session
   return {
     props: {
-      session
+      user
     }
   }
 }
