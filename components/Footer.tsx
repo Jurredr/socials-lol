@@ -1,5 +1,7 @@
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { BsGithub } from 'react-icons/bs'
+import { basicHoverTapScale } from '../src/motionpresets'
 import ShadowButton from './ShadowButton'
 
 const Footer: React.FC = () => {
@@ -20,16 +22,26 @@ const Footer: React.FC = () => {
         </div>
       </Link>
       <div className="flex flex-col sm:flex-row sm:gap-2 md:gap-4 lg:gap-10 justify-center items-center">
-        <div className="absolute left-[1.5rem] bottom-8 sm:bottom-auto sm:left-auto sm:relative flex text-white font-medium gap-2 lg:gap-6">
+        <div className="absolute left-[1.5rem] bottom-8 sm:bottom-auto sm:left-auto sm:relative flex text-white font-medium gap-4 lg:gap-6">
           <Link href="/tos" passHref>
-            <p className="cursor-pointer noselect sm:w-20 md:w-auto">
+            <motion.p
+              className="cursor-pointer noselect sm:w-20 md:w-auto"
+              whileHover={basicHoverTapScale.hover}
+              whileTap={basicHoverTapScale.tap}
+              transition={{ duration: basicHoverTapScale.duration }}
+            >
               terms of service
-            </p>
+            </motion.p>
           </Link>
           <Link href="/privacy-statement" passHref>
-            <p className="cursor-pointer noselect sm:w-20 md:w-auto">
+            <motion.p
+              className="cursor-pointer noselect sm:w-20 md:w-auto"
+              whileHover={basicHoverTapScale.hover}
+              whileTap={basicHoverTapScale.tap}
+              transition={{ duration: basicHoverTapScale.duration }}
+            >
               privacy policy
-            </p>
+            </motion.p>
           </Link>
         </div>
         <div className="flex gap-5">

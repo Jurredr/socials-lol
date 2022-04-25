@@ -5,6 +5,8 @@ import { NextPage } from 'next'
 import Link from 'next/link'
 import { ChangeEvent, useState } from 'react'
 import { useRouter } from 'next/router'
+import { motion } from 'framer-motion'
+import { basicHoverTapScale } from '../src/motionpresets'
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -54,15 +56,22 @@ const Home: NextPage = () => {
                     </div>
                   </div>
                   <Link
-                    href={`/sign-up?username=${signupInput.toLowerCase()}`}
+                    href={
+                      signupInput.length > 0
+                        ? `/sign-up?username=${signupInput.toLowerCase()}`
+                        : '/sign-up'
+                    }
                     passHref
                   >
-                    <button
+                    <motion.button
                       className="noselect whitespace-nowrap w-full tracking-tight text-[1.4rem] font-medium rounded-full bg-gray-400 bg-opacity-20 px-4 py-[0.3rem]"
                       type="button"
+                      whileHover={basicHoverTapScale.hover}
+                      whileTap={basicHoverTapScale.tap}
+                      transition={{ duration: basicHoverTapScale.duration }}
                     >
                       Sign up
-                    </button>
+                    </motion.button>
                   </Link>
                 </div>
                 <div className="absolute h-[4rem] w-full rounded-full bg-black -bottom-2" />
