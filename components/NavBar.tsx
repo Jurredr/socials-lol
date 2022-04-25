@@ -1,8 +1,18 @@
+import { Session } from 'next-auth'
+import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { FiLogIn } from 'react-icons/fi'
 import ShadowButton from './ShadowButton'
 
-const NavBar: React.FC = () => {
+interface Props {
+  ssr?: boolean
+  ssrData?: Session | null
+}
+
+const NavBar: React.FC<Props> = (props) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const data = props.ssr ? props.ssrData : useSession()
+
   return (
     <div className="flex justify-between">
       <Link href="/" passHref>

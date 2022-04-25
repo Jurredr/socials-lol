@@ -1,11 +1,36 @@
-import { NextPage } from 'next'
+import { GetServerSidePropsContext, NextPage } from 'next'
+import { Session } from 'next-auth'
+import { BuiltInProviderType } from 'next-auth/providers'
+import {
+  ClientSafeProvider,
+  getProviders,
+  getSession,
+  LiteralUnion
+} from 'next-auth/react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 import { IoChevronBack } from 'react-icons/io5'
 import OAuthButtons from '../components/auth/OAuthButtons'
 import DividerText from '../components/DividerText'
 import ShadowButton from '../components/ShadowButton'
 
-const SignIn: NextPage = () => {
+interface Props {
+  session: Session | null
+  authProviders: Record<
+    LiteralUnion<BuiltInProviderType, string>,
+    ClientSafeProvider
+  >
+}
+
+const SignIn: NextPage<Props> = (props) => {
+  const router = useRouter()
+  useEffect(() => {
+    if (props.session?.user) {
+      router.push('/')
+    }
+  })
+
   return (
     <div className="w-full h-full grid grid-cols-2 items-center justify-center">
       {/* Left */}
@@ -43,7 +68,10 @@ const SignIn: NextPage = () => {
 
           <div className="w-full flex flex-col gap-4 mt-6">
             {/* OAuth */}
-            <OAuthButtons textPrefix="Continue with " />
+            <OAuthButtons
+              textPrefix="Continue with "
+              authProviders={props.authProviders}
+            />
 
             {/* Or */}
             <DividerText text="or" />
@@ -64,3 +92,14 @@ const SignIn: NextPage = () => {
 }
 
 export default SignIn
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getSession(context)
+  const authProviders = await getProviders()
+  return {
+    props: {
+      session,
+      authProviders
+    }
+  }
+}

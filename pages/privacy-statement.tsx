@@ -1,8 +1,14 @@
-import { NextPage } from 'next'
+import { GetServerSidePropsContext, NextPage } from 'next'
+import { Session } from 'next-auth'
+import { getSession } from 'next-auth/react'
 import Footer from '../components/Footer'
 import NavBar from '../components/NavBar'
 
-const PrivacyStatement: NextPage = () => {
+interface Props {
+  session: Session | null
+}
+
+const PrivacyStatement: NextPage<Props> = (props) => {
   return (
     <div className="h-screen w-screen relative flex flex-col items-center justify-between">
       <div
@@ -12,7 +18,7 @@ const PrivacyStatement: NextPage = () => {
             'linear-gradient(120deg, rgba(255,172,213,1) 0%, rgba(254,250,166,1) 65%, rgba(255,253,210,1) 100%)'
         }}
       >
-        <NavBar />
+        <NavBar ssr ssrData={props.session} />
       </div>
       <h1 className="font-semibold text-6xl">Privacy Statement</h1>
       <Footer />
@@ -21,3 +27,12 @@ const PrivacyStatement: NextPage = () => {
 }
 
 export default PrivacyStatement
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getSession(context)
+  return {
+    props: {
+      session
+    }
+  }
+}

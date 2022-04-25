@@ -1,14 +1,20 @@
 import Footer from '../components/Footer'
 import ShadowButton from '../components/ShadowButton'
 import NavBar from '../components/NavBar'
-import { NextPage } from 'next'
+import { GetServerSidePropsContext, NextPage } from 'next'
 import Link from 'next/link'
 import { ChangeEvent, useState } from 'react'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
 import { basicHoverTapScale } from '../src/motionpresets'
+import { getSession } from 'next-auth/react'
+import { Session } from 'next-auth'
 
-const Home: NextPage = () => {
+interface Props {
+  session: Session | null
+}
+
+const Home: NextPage<Props> = (props) => {
   const router = useRouter()
   const [signupInput, setSignupInput] = useState('')
 
@@ -22,7 +28,7 @@ const Home: NextPage = () => {
         }}
       >
         <div className="pt-16 px-8 sm:px-12 md:px-24 xl:px-44">
-          <NavBar />
+          <NavBar ssr ssrData={props.session} />
           <div className="flex justify-between">
             <div className="flex flex-col gap-12">
               <div className="mt-40">
@@ -122,7 +128,7 @@ const Home: NextPage = () => {
           bg="bg-white"
           border="border-socialpink"
           shadow="bg-socialpink"
-          href="/"
+          href="/sign-up"
         >
           <p className="noselect text-lg">Create your Card</p>
         </ShadowButton>
@@ -133,3 +139,12 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getSession(context)
+  return {
+    props: {
+      session
+    }
+  }
+}
