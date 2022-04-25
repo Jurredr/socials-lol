@@ -4,8 +4,10 @@ import NavBar from '../components/NavBar'
 import { NextPage } from 'next'
 import Link from 'next/link'
 import { ChangeEvent, useState } from 'react'
+import { useRouter } from 'next/router'
 
 const Home: NextPage = () => {
+  const router = useRouter()
   const [signupInput, setSignupInput] = useState('')
 
   return (
@@ -40,10 +42,21 @@ const Home: NextPage = () => {
                         onChange={(event: ChangeEvent<HTMLInputElement>) =>
                           setSignupInput(event.target.value)
                         }
+                        onKeyPress={(event) => {
+                          if (event.key === 'Enter') {
+                            // @ts-ignore
+                            router.push(
+                              `/sign-up?username=${signupInput.toLowerCase()}`
+                            )
+                          }
+                        }}
                       />
                     </div>
                   </div>
-                  <Link href={`/sign-up?username=${signupInput}`} passHref>
+                  <Link
+                    href={`/sign-up?username=${signupInput.toLowerCase()}`}
+                    passHref
+                  >
                     <button
                       className="noselect whitespace-nowrap w-full tracking-tight text-[1.4rem] font-medium rounded-full bg-gray-400 bg-opacity-20 px-4 py-[0.3rem]"
                       type="button"
