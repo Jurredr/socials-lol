@@ -29,18 +29,16 @@ const NavBar: React.FC = () => {
             <p className="noselect text-base sm:text-lg">Sign in</p>
           </button>
         </Link>
-        <Link href="/sign-up" passHref>
-          <ShadowButton
-            h="3rem"
-            w="9rem"
-            bg="bg-white"
-            border="border-black"
-            shadow="bg-black"
-            href="/"
-          >
-            <p className="noselect text-base sm:text-lg">Sign up</p>
-          </ShadowButton>
-        </Link>
+        <ShadowButton
+          h="3rem"
+          w="9rem"
+          bg="bg-white"
+          border="border-black"
+          shadow="bg-black"
+          href="/sign-up"
+        >
+          <p className="noselect text-base sm:text-lg">Sign up</p>
+        </ShadowButton>
       </div>
     </div>
   )

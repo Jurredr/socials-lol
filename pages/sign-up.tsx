@@ -1,10 +1,37 @@
 import { NextPage } from 'next'
+import { IoChevronBack } from 'react-icons/io5'
+import ShadowButton from '../components/ShadowButton'
 
 const SignUp: NextPage = () => {
   return (
     <div className="w-full h-full grid grid-cols-2 items-center justify-center">
       {/* Left */}
-      <div className="z-10 h-screen w-screen lg:w-[50vw] flex justify-center items-center"></div>
+      <div className="z-10 h-screen w-screen lg:w-[50vw] flex justify-center items-center">
+        {/* Back button */}
+        <div className="absolute top-5 left-5">
+          <ShadowButton
+            h="2.7rem"
+            w="9rem"
+            bg="bg-white"
+            border="border-black"
+            shadow="bg-black"
+            href="/"
+          >
+            <div className="flex justify-center items-center">
+              <IoChevronBack size={20} />
+              <p>Back Home</p>
+            </div>
+          </ShadowButton>
+        </div>
+
+        {/* Register */}
+        <div className="flex flex-col justify-center items-center w-full max-w-[22rem]">
+          <h1>Create Account</h1>
+          <p>
+            Aleady have an account? <span>Sign in</span>
+          </p>
+        </div>
+      </div>
 
       {/* Right */}
       <div
