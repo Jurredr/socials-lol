@@ -4,7 +4,7 @@ const WebHead: React.FC = () => {
   return (
     <Head>
       {/* Base configuration */}
-      <title>socials.lol - All Your Socials, One Card</title>
+      <title>socials.lol - One Card, All Your Socials</title>
       <link rel="icon" href="/branding/favicon.ico" />
 
       {/* SEO configuration */}
@@ -28,15 +28,27 @@ const WebHead: React.FC = () => {
       <link rel="canonical" href="https://www.socials.lol" />
 
       {/* OpenGraph tags */}
-      <meta property="og:title" content="socials.lol - All Your Socials, One Card" />
+      <meta
+        property="og:title"
+        content="socials.lol - All Your Socials, One Card"
+      />
       <meta property="og:type" content="website" />
       <meta
         property="og:description"
         content="Create a shareable card with all your socials, links, game stats, and more!"
       />
-      <meta property="og:image" content="https://www.socials.lol/branding/banner.jpg" />
-      <meta property="og:image:url" content="https://www.socials.lol/branding/banner.jpg" />
-      <meta property="og:image:secure_url" content="https://www.socials.lol/branding/banner.jpg" />
+      <meta
+        property="og:image"
+        content="https://www.socials.lol/branding/banner.jpg"
+      />
+      <meta
+        property="og:image:url"
+        content="https://www.socials.lol/branding/banner.jpg"
+      />
+      <meta
+        property="og:image:secure_url"
+        content="https://www.socials.lol/branding/banner.jpg"
+      />
       <meta property="og:url" content="https://www.socials.lol" />
       <meta property="og:site_name" content="socials.lol" />
       <meta property="og:email" content="hello@socials.lol" />
@@ -48,7 +60,10 @@ const WebHead: React.FC = () => {
         name="twitter:description"
         content="Create a shareable card with all your socials, links, game stats, and more!"
       />
-      <meta name="twitter:image" content="https://www.socials.lol/branding/banner.jpg" />
+      <meta
+        name="twitter:image"
+        content="https://www.socials.lol/branding/banner.jpg"
+      />
       <meta name="twitter:site" content="@JurredeRuiter" />
       <meta name="twitter:creator" content="@JurredeRuiter" />
     </Head>
