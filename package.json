@@ -1,7 +1,8 @@
 {
   "name": "socials-lol",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "Create a shareable card with all your socials, links, game stats, and more!",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,7 +10,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "firebase": "^9.6.11",
+    "lodash": "^4.17.21",
     "next": "12.1.5",
+    "next-auth": "^4.3.3",
+    "nodemailer": "^6.7.3",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-icons": "^4.3.1",
