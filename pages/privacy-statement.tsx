@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import Footer from '../components/Footer'
-import LandingNav from '../components/LandingNav'
+import NavBar from '../components/NavBar'
 
 const PrivacyStatement: NextPage = () => {
   return (
@@ -12,7 +12,7 @@ const PrivacyStatement: NextPage = () => {
             'linear-gradient(120deg, rgba(255,172,213,1) 0%, rgba(254,250,166,1) 65%, rgba(255,253,210,1) 100%)'
         }}
       >
-        <LandingNav />
+        <NavBar />
       </div>
       <h1 className="font-semibold text-6xl">Privacy Statement</h1>
       <Footer />

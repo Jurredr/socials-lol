@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { FiLogIn } from 'react-icons/fi'
 import ShadowButton from './ShadowButton'
 
-const LandingNav: React.FC = () => {
+const NavBar: React.FC = () => {
   return (
     <div className="flex justify-between">
       <Link href="/" passHref>
@@ -44,4 +44,4 @@ const LandingNav: React.FC = () => {
   )
 }
 
-export default LandingNav
+export default NavBar

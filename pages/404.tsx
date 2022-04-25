@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import Footer from '../components/Footer'
-import LandingNav from '../components/LandingNav'
+import NavBar from '../components/NavBar'
 
 const Custom404 = () => {
   return (
@@ -15,7 +15,7 @@ const Custom404 = () => {
               'linear-gradient(120deg, rgba(255,172,213,1) 0%, rgba(254,250,166,1) 65%, rgba(255,253,210,1) 100%)'
           }}
         >
-          <LandingNav />
+          <NavBar />
         </div>
         <div className="flex flex-col justify-center items-center gap-12 h-5/6">
           <div className="relative flex flex-col justify-center items-center">
