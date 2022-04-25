@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next-auth/firebase-adapter": "^0.1.2-pr.183-76202b42.8",
     "firebase": "^9.6.11",
     "lodash": "^4.17.21",
     "next": "12.1.5",
