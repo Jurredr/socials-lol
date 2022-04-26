@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { FiLogIn } from 'react-icons/fi'
 import { FaChevronDown } from 'react-icons/fa'
 import ShadowButton from './ShadowButton'
+import { BeatLoader } from 'react-spinners'
 
 interface Props {
   ssr?: boolean
@@ -39,20 +40,24 @@ const NavBar: React.FC<Props> = (props) => {
       </Link>
       {session?.data?.user ? (
         // Signed in
-        <div className="flex justify-center items-center font-medium gap-2">
+        <div
+          className="flex justify-center items-center font-medium gap-2 cursor-pointer hover:bg-black hover:bg-opacity-5 transition-all duration-300 rounded-xl px-2"
+          onClick={() => signOut()}
+        >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="rounded-2xl w-12 border-black border-[3px]"
             src={String(session.data?.user?.image) ?? ''}
             alt={String(session.data?.user?.name) ?? 'User'}
           />
-          <div className="cursor-pointer" onClick={() => signOut()}>
-            <FaChevronDown size={16} />
-          </div>
+          <p>@jurre</p>
+          <FaChevronDown size={16} />
         </div>
       ) : session.status === 'loading' ? (
         // Loading
-        <div>Loading</div>
+        <div className="flex justify-center items-center">
+          <BeatLoader size={10} speedMultiplier={0.7} />
+        </div>
       ) : (
         // Not signed in
         <div className="flex justify-center items-center gap-6">
