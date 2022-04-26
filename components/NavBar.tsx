@@ -1,6 +1,7 @@
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
-import { FiLogIn, FiUser } from 'react-icons/fi'
+import { FiLogIn } from 'react-icons/fi'
+import { FaChevronDown } from 'react-icons/fa'
 import ShadowButton from './ShadowButton'
 
 interface Props {
@@ -15,8 +16,10 @@ interface Props {
 }
 
 const NavBar: React.FC<Props> = (props) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const user = props.ssr ? props.ssrData : useSession().data?.user
+  const session = props.ssr
+    ? { data: props.ssrData, status: 'ssr' }
+    : // eslint-disable-next-line react-hooks/rules-of-hooks
+      useSession()
 
   return (
     <div className="flex justify-between">
@@ -34,15 +37,24 @@ const NavBar: React.FC<Props> = (props) => {
           />
         </div>
       </Link>
-      {user ? (
-        <div
-          className="flex justify-center items-center cursor-pointer font-medium"
-          onClick={() => signOut()}
-        >
-          <FiUser className="mr-2" />
-          {user.name}
+      {session?.data ? (
+        // Signed in
+        <div className="flex justify-center items-center font-medium gap-2">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className="rounded-2xl w-12 border-black border-[3px]"
+            src={String(session.data?.image) ?? ''}
+            alt={String(session.data?.name) ?? 'User'}
+          />
+          <div className="cursor-pointer" onClick={() => signOut()}>
+            <FaChevronDown size={16} />
+          </div>
         </div>
+      ) : session.status === 'loading' ? (
+        // Loading
+        <div>Loading</div>
       ) : (
+        // Not signed in
         <div className="flex justify-center items-center gap-6">
           <Link href="/sign-in" passHref>
             <button
