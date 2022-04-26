@@ -17,7 +17,7 @@ interface Props {
 
 const NavBar: React.FC<Props> = (props) => {
   const session = props.ssr
-    ? { data: props.ssrData, status: 'ssr' }
+    ? { data: { user: props.ssrData }, status: 'ssr' }
     : // eslint-disable-next-line react-hooks/rules-of-hooks
       useSession()
 
@@ -43,8 +43,8 @@ const NavBar: React.FC<Props> = (props) => {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="rounded-2xl w-12 border-black border-[3px]"
-            src={String(session.data?.image) ?? ''}
-            alt={String(session.data?.name) ?? 'User'}
+            src={String(session.data?.user?.image) ?? ''}
+            alt={String(session.data?.user?.name) ?? 'User'}
           />
           <div className="cursor-pointer" onClick={() => signOut()}>
             <FaChevronDown size={16} />
