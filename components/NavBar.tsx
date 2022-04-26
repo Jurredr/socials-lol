@@ -37,7 +37,7 @@ const NavBar: React.FC<Props> = (props) => {
           />
         </div>
       </Link>
-      {session?.data ? (
+      {session?.data?.user ? (
         // Signed in
         <div className="flex justify-center items-center font-medium gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
