@@ -4,9 +4,9 @@
   "private": true,
   "description": "Create a shareable card with all your socials, links, game stats, and more!",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npx patch-package; next dev",
     "build": "npx patch-package; next build",
-    "start": "next start",
+    "start": "npx patch-package; next start",
     "lint": "next lint"
   },
   "dependencies": {
