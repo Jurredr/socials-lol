@@ -41,10 +41,10 @@ const Custom404 = () => {
             />
           </div>
           <div className="relative w-[21rem] h-[11.5rem]">
-            <Image
-              className="noselect nextimg"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className="noselect w-full h-full"
               draggable={false}
-              layout="fill"
               src="/images/facepalm.gif"
               alt="GIF of people facepalming"
             />
