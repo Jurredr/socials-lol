@@ -8,6 +8,7 @@ import {
 } from 'next-auth/react'
 import Link from 'next/link'
 import { IoChevronBack } from 'react-icons/io5'
+import EmailField from '../components/auth/EmailField'
 import OAuthButtons from '../components/auth/OAuthButtons'
 import DividerText from '../components/DividerText'
 import ShadowButton from '../components/ShadowButton'
@@ -64,6 +65,9 @@ const SignIn: NextPage<Props> = (props) => {
 
             {/* Or */}
             <DividerText text="or" />
+
+            {/* Input */}
+            <EmailField />
           </div>
         </div>
       </div>

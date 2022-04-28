@@ -44,9 +44,9 @@ const Home: NextPage<Props> = (props) => {
               <div className="relative">
                 <div className="flex w-full max-w-full pl-7 pr-2 z-10 items-center relative bg-white rounded-full h-[4rem] border-[0.2rem] border-black">
                   <div className="flex items-center h-full">
-                    <span className="noselect text-[1.8rem] tracking-tight font-medium">
+                    <p className="noselect text-[1.8rem] tracking-tight font-medium">
                       socials.lol/@
-                    </span>
+                    </p>
                     <div className="flex-1 pr-1">
                       <input
                         className="outline-none lowercase max-w-[17rem] text-[1.8rem] placeholder-gray-400 placeholder:opacity-80 tracking-tight font-medium h-full"
