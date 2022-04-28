@@ -1,7 +1,9 @@
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 import React from 'react'
 import Footer from '../components/Footer'
 import NavBar from '../components/NavBar'
+import { basicHoverTapScale } from '../src/motionpresets'
 
 const Custom404 = () => {
   return (
@@ -49,7 +51,12 @@ const Custom404 = () => {
             />
           </div>
           <Link href="/" passHref>
-            <div className="flex gap-2 justify-center items-center border-b-2 border-black h-6">
+            <motion.div
+              className="flex gap-2 justify-center items-center border-b-2 border-black h-6"
+              whileHover={basicHoverTapScale.hover}
+              whileTap={basicHoverTapScale.tap}
+              transition={{ duration: basicHoverTapScale.duration }}
+            >
               <p className="font-medium cursor-pointer text-2xl">
                 take me home
               </p>
@@ -60,7 +67,7 @@ const Custom404 = () => {
                 src="/icons/arrow-tr.svg"
                 alt="Arrow to top right"
               />
-            </div>
+            </motion.div>
           </Link>
         </div>
       </div>
