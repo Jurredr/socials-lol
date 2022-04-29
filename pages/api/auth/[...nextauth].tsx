@@ -1,4 +1,4 @@
-import NextAuth, { TokenSet } from 'next-auth'
+import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 import EmailProvider from 'next-auth/providers/email'
 import { FirebaseAdapter } from '@next-auth/firebase-adapter'
@@ -14,10 +14,6 @@ export default NextAuth({
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID || 'undefined',
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || 'undefined'
-      // TODO: Customize data saved on sign up
-      // profile: (profile: P, tokens: TokenSet) => {
-
-      // }
     }),
     EmailProvider({
       server: process.env.EMAIL_SERVER,
@@ -27,23 +23,20 @@ export default NextAuth({
 
   // The callbacks
   callbacks: {
-    // async session({ session, user, token }) {
-    //   // console.log('SESSION:', session, user, token)
-    //   return session
-    // },
-    // async signIn({ user, account, profile, email, credentials }) {
-    //   // Change user here
-    //   const test = { ...user, username: '@jurre' }
-    //   user = test
-    //   // console.log('SIGNIN:', user, account, profile, email, credentials)
-    //   return true
-    // }
+    async session({ session, user }) {
+      session.user = user
+      console.log('SESSION:', session)
+      return session
+    }
   },
 
+  // Secret
   secret: process.env.JWT_SECRET,
 
+  // Pages
   pages: {
     signIn: '/sign-in',
-    verifyRequest: '/activate'
+    verifyRequest: '/activate',
+    error: '/'
   }
 })
