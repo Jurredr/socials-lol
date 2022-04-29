@@ -31,7 +31,7 @@ const NavBar: React.FC<Props> = (props) => {
     useComponentVisible(false, true)
 
   return (
-    <div className="flex justify-between" ref={ref}>
+    <div className="flex justify-between">
       <Link href="/" passHref>
         <div className="flex justify-center items-center gap-3 cursor-pointer noselect">
           <p className="font-newkansas font-semibold text-white text-[1.7rem] sm:text-[2.7rem]">
@@ -47,7 +47,7 @@ const NavBar: React.FC<Props> = (props) => {
         </div>
       </Link>
       {session?.data?.user ? (
-        <div className="relative">
+        <div className="relative" ref={ref}>
           {/* Signed in */}
           <div
             className="flex justify-center items-center font-medium gap-2 cursor-pointer hover:bg-black hover:bg-opacity-5 transition-all duration-300 rounded-xl px-2 py-2"
