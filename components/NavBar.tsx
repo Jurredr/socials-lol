@@ -4,10 +4,10 @@ import { FiLogIn } from 'react-icons/fi'
 import { FaChevronDown } from 'react-icons/fa'
 import ShadowButton from './ShadowButton'
 import { BeatLoader } from 'react-spinners'
-import { useState } from 'react'
 import ProfileDropdown from './ProfileDropdown'
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
+import useComponentVisible from '../hooks/useComponentVisible'
 
 interface Props {
   ssr?: boolean
@@ -25,10 +25,13 @@ const NavBar: React.FC<Props> = (props) => {
     ? { data: { user: props.ssrData }, status: 'ssr' }
     : // eslint-disable-next-line react-hooks/rules-of-hooks
       useSession()
-  const [profileDropdownOpen, setProfileDropdownOpen] = useState(false)
+
+  // const [profileDropdownOpen, setProfileDropdownOpen] = useState(false)
+  const { ref, isComponentVisible, setIsComponentVisible } =
+    useComponentVisible(false, true)
 
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between" ref={ref}>
       <Link href="/" passHref>
         <div className="flex justify-center items-center gap-3 cursor-pointer noselect">
           <p className="font-newkansas font-semibold text-white text-[1.7rem] sm:text-[2.7rem]">
@@ -48,7 +51,7 @@ const NavBar: React.FC<Props> = (props) => {
           {/* Signed in */}
           <div
             className="flex justify-center items-center font-medium gap-2 cursor-pointer hover:bg-black hover:bg-opacity-5 transition-all duration-300 rounded-xl px-2 py-2"
-            onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
+            onClick={() => setIsComponentVisible(!isComponentVisible)}
           >
             <div className="relative rounded-2xl w-12 h-12 border-black border-[3px]">
               <Image
@@ -64,7 +67,7 @@ const NavBar: React.FC<Props> = (props) => {
           </div>
           {/* Profile dropdown */}
           <AnimatePresence>
-            {profileDropdownOpen && (
+            {isComponentVisible && (
               <motion.div
                 initial={{ opacity: 0, y: -5 }}
                 animate={{ opacity: 1, y: 0 }}
