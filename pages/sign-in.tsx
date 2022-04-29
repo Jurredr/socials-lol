@@ -10,6 +10,7 @@ import Link from 'next/link'
 import { IoChevronBack } from 'react-icons/io5'
 import EmailField from '../components/auth/EmailField'
 import OAuthButtons from '../components/auth/OAuthButtons'
+import SignInSide from '../components/auth/SignInSide'
 import DividerText from '../components/DividerText'
 import ShadowButton from '../components/ShadowButton'
 
@@ -79,7 +80,9 @@ const SignIn: NextPage<Props> = (props) => {
           background:
             'linear-gradient(120deg, rgba(255,172,213,1) 0%, rgba(254,250,166,1) 65%, rgba(255,253,210,1) 100%)'
         }}
-      />
+      >
+        <SignInSide />
+      </div>
     </div>
   )
 }
