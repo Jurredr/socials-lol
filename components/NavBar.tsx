@@ -1,4 +1,4 @@
-import { signOut, useSession } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 import { FiLogIn } from 'react-icons/fi'
 import { FaChevronDown } from 'react-icons/fa'
@@ -7,6 +7,7 @@ import { BeatLoader } from 'react-spinners'
 import { useState } from 'react'
 import ProfileDropdown from './ProfileDropdown'
 import { AnimatePresence, motion } from 'framer-motion'
+import Image from 'next/image'
 
 interface Props {
   ssr?: boolean
@@ -49,12 +50,14 @@ const NavBar: React.FC<Props> = (props) => {
             className="flex justify-center items-center font-medium gap-2 cursor-pointer hover:bg-black hover:bg-opacity-5 transition-all duration-300 rounded-xl px-2 py-2"
             onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className="rounded-2xl w-12 border-black border-[3px]"
-              src={String(session.data?.user?.image) ?? ''}
-              alt={String(session.data?.user?.name) ?? 'User'}
-            />
+            <div className="relative rounded-2xl w-12 h-12 border-black border-[3px]">
+              <Image
+                layout="fill"
+                className="nextimg rounded-xl"
+                src={String(session.data?.user?.image) ?? ''}
+                alt={String(session.data?.user?.name) ?? 'User'}
+              />
+            </div>
             {/* // TODO: user.username here */}
             <p className="noselect">@jurre</p>
             <FaChevronDown size={16} />
