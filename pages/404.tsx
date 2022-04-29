@@ -28,14 +28,14 @@ const Custom404 = () => {
             </h2>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              className="h-[3.1rem] absolute rotate-[20deg] top-10 -right-72"
+              className="h-[3.1rem] absolute rotate-[20deg] -top-4 -right-10 sm:-right-8 md:-right-20 lg:-right-48 xl:-right-64 "
               draggable={false}
               src="/figures/star.svg"
               alt="Drawn star figure"
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              className="h-[3.1rem] absolute scale-75 -bottom-28 -left-72"
+              className="h-[3.1rem] absolute scale-75 -bottom-96 -left-16 sm:-bottom-28 sm:-left-18 md:-left-24 lg:-left-52 xl:-left-72"
               draggable={false}
               src="/figures/bubble.svg"
               alt="Drawn bubble figure"
