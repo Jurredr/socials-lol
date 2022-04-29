@@ -73,7 +73,7 @@ const NavBar: React.FC<Props> = (props) => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
                 transition={{ duration: 0.1 }}
-                className="absolute -bottom-[8.7rem] w-full"
+                className="absolute -bottom-[8.7rem] w-full z-50"
               >
                 <ProfileDropdown user={session?.data?.user} />
               </motion.div>

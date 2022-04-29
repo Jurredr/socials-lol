@@ -12,7 +12,7 @@ interface Props {
 
 const ProfileDropdown: React.FC<Props> = (props) => {
   return (
-    <div className="bg-white border-black border-[3px] rounded-xl px-2 py-2 noselect cursor-default flex flex-col gap-1">
+    <div className="bg-white border-black border-[3px] rounded-xl px-2 py-2 noselect cursor-default flex flex-col gap-1 z-50">
       {/* // TODO: user.username here */}
       <Link href={'/@jurre'} passHref>
         <div className="flex cursor-pointer justify-start items-center gap-2 hover:bg-gray-100 hover:bg-opacity-50 rounded-lg px-1 py-1">
