@@ -71,8 +71,40 @@ const SignUp: NextPage<Props> = (props) => {
             {/* Input */}
             <UsernameField />
             <EmailField />
+            <label className="flex justify-center items-center gap-2 mb-4">
+              <input
+                type="checkbox"
+                name="tos-privacy-checkbox"
+                id="tos-privacy-checkbox"
+                className="form-checkbox cursor-pointer w-4 h-4 border-2 border-gray-400 rounded text-socialpink focus:ring-socialpink "
+              />
+              <p className="text-sm font-medium text-gray-400 whitespace-nowrap noselect">
+                I agree to the{' '}
+                <Link href="/tos" passHref>
+                  <span className="text-socialpink cursor-pointer hover:underline">
+                    TOS
+                  </span>
+                </Link>{' '}
+                and{' '}
+                <Link href="/privacy-statement" passHref>
+                  <span className="text-socialpink cursor-pointer hover:underline">
+                    Privacy Statement
+                  </span>
+                </Link>
+              </p>
+            </label>
 
             {/* Submit */}
+            <ShadowButton
+              h="2.7rem"
+              w="100%"
+              bg="bg-white"
+              border="border-black"
+              shadow="bg-black"
+              onClick={() => alert('Sign up with email')}
+            >
+              <p>Sign up with email</p>
+            </ShadowButton>
           </div>
         </div>
       </div>

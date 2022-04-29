@@ -69,6 +69,20 @@ const SignIn: NextPage<Props> = (props) => {
 
             {/* Input */}
             <EmailField />
+
+            {/* Submit */}
+            <div className="mt-2">
+              <ShadowButton
+                h="2.7rem"
+                w="100%"
+                bg="bg-white"
+                border="border-black"
+                shadow="bg-black"
+                onClick={() => alert('Sign in with email')}
+              >
+                <p>Sign in with email</p>
+              </ShadowButton>
+            </div>
           </div>
         </div>
       </div>
