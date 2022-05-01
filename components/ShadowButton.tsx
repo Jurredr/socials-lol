@@ -12,6 +12,12 @@ interface Props {
   children?: React.ReactNode
 }
 
+// <button className="group bg-black rounded-2xl border-none cursor-pointer w-full">
+//   <span className="block py-[0.4rem] whitespace-nowrap font-medium rounded-2xl border-black border-[0.2rem] border-b-[0.1rem] bg-white -translate-y-[6px] group-active:-translate-y-[2px]">
+//     Sign in with email
+//   </span>
+// </button>
+
 const ShadowButton: React.FC<Props> = (props) => {
   return (
     <button
