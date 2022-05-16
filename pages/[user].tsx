@@ -1,5 +1,5 @@
 import { GetServerSidePropsContext, NextPage } from 'next'
-import Footer from '../components/Footer'
+import SimpleFooter from '../components/SimpleFooter'
 
 const User: NextPage = () => {
   return (
@@ -17,7 +17,7 @@ const User: NextPage = () => {
         <h1 className="text-2xl mt-14 font-medium">@jurre</h1>
       </div>
 
-      <Footer />
+      <SimpleFooter />
     </div>
   )
 }
