@@ -7,6 +7,7 @@ import {
   LiteralUnion
 } from 'next-auth/react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { IoChevronBack } from 'react-icons/io5'
 import EmailField from '../components/auth/EmailField'
 import OAuthButtons from '../components/auth/OAuthButtons'
@@ -23,6 +24,9 @@ interface Props {
 }
 
 const SignUp: NextPage<Props> = (props) => {
+  const router = useRouter()
+  const { username } = router.query
+
   return (
     <div className="w-full h-full grid grid-cols-2 items-center justify-center">
       {/* Left */}
@@ -69,7 +73,7 @@ const SignUp: NextPage<Props> = (props) => {
             <DividerText text="or" />
 
             {/* Input */}
-            <UsernameField />
+            <UsernameField intialValue={username} />
             <EmailField />
             <label className="flex justify-center items-center gap-2 mb-4">
               <input
