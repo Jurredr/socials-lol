@@ -33,7 +33,7 @@ const Home: NextPage<Props> = (props) => {
         }}
       >
         <div className="pt-16 px-8 sm:px-12 md:px-24 xl:px-44">
-          <NavBar ssr ssrData={props.user} />
+          <NavBar />
           <div className="flex justify-between">
             <div className="flex flex-col gap-12">
               <div className="mt-40">
